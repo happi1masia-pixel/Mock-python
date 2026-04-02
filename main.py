@@ -11,8 +11,7 @@ Example:
     add_numbers(-1, 4) -> 3
 """
 def add_numbers(a, b):
-    pass
-
+    return a + b
 
 # Exercise 2: Subtract Numbers
 """
@@ -23,8 +22,7 @@ Example:
     subtract_numbers(3, 5) -> -2
 """
 def subtract_numbers(a, b):
-    pass
-
+    return a - b
 
 # Exercise 3: FruitLoop
 """
@@ -42,8 +40,15 @@ Example:
     Loop
 """
 def fruitloop(n):
-    pass
-
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FruitLoop")
+        elif i % 3 == 0:
+            print("Fruit")
+        elif i % 5 == 0:
+            print("Loop")
+        else:
+            print(i)
 
 # Exercise 4: Fibonacci
 """
@@ -54,8 +59,15 @@ Example:
     fibonacci(7) -> 13
 """
 def fibonacci(n: int):
-    pass
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
 
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
 
 # Exercise 5: Find Maximum
 """
@@ -66,8 +78,7 @@ Example:
     find_max([-1,-5,-3]) -> -1
 """
 def find_max(numbers: list):
-    pass
-
+    return max(numbers)
 
 # Exercise 6: Find Minimum
 """
@@ -78,9 +89,7 @@ Example:
     find_min([-1,-5,-3]) -> -5
 """
 def find_min(numbers: list):
-    pass
-
-
+    return min(numbers)
 # Exercise 7: Person Class
 """
 Represents a person with a name and age.
@@ -96,15 +105,15 @@ Example:
     p = Person("Alice", 25)
     p.greet() -> "Hello, my name is Alice and I am 25 years old."
 """
+
+
 class Person:
     def __init__(self, name: str, age: int):
-        pass
+        self.name = name
+        self.age = age
 
     def greet(self):
-        pass
-
-
-
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
 
 
 # Example usage (can be removed or commented out during testing)
